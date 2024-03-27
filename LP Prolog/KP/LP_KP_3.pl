@@ -1,0 +1,90 @@
+sex('PavelBudnikov',m).
+sex('IrinaBudnikova',f).
+sex('ValeruaBudnikova',f).
+sex('EugeneBudnikov',m).
+sex('LydiaAfanasenkova',f).
+sex('NinaBudnikova',f).
+sex('AnatolyAfanasenkov',m).
+sex('TatyanaFilatova',f).
+sex('YuriAfanasenkov',m).
+sex('MariaKashmina',f).
+sex('AlexeyFilatov',m).
+sex('DmitryKashmin',m).
+sex('JaroslavKashmin',m).
+sex('TatyanaAfanasenkova',f).
+sex('SofiaAfanasenkova',f).
+sex('PraskovyaAfanasenkova',f).
+sex('AlexanderAfanasenkov',m).
+sex('MaximAfanasenkov',m).
+sex('PeterTrishkin',m).
+sex('PavelBudnikov',m).
+sex('IrinaBudnikova',f).
+sex('ValeruaBudnikova',f).
+sex('EugeneBudnikov',m).
+sex('LydiaAfanasenkova',f).
+sex('NinaBudnikova',f).
+sex('AnatolyAfanasenkov',m).
+sex('TatyanaFilatova',f).
+sex('YuriAfanasenkov',m).
+sex('MariaKashmina',f).
+sex('AlexeyFilatov',m).
+sex('DmitryKashmin',m).
+sex('JaroslavKashmin',m).
+sex('TatyanaAfanasenkova',f).
+sex('SofiaAfanasenkova',f).
+sex('PraskovyaAfanasenkova',f).
+sex('AlexanderAfanasenkov',m).
+sex('MaximAfanasenkov',m).
+sex('PeterTrishkin',m).
+sex('DariaTrishkina',f).
+sex('MaximElenin',m).
+sex('MarusyaElenina',f).
+sex('AndryanTrishkin',m).
+sex('AlexanderTrishkin',m).
+sex('VictorBudnikov',m).
+sex('IgorBudnikov',m).
+sex('ElenaBudnikova',f).
+sex('ArtemBudnikov',m).
+sex('TanyaAfanasenkova',f).
+parent('PavelBudnikov','ValeruaBudnikova').
+parent('IrinaBudnikova','ValeruaBudnikova').
+parent('EugeneBudnikov','PavelBudnikov').
+parent('NinaBudnikova','PavelBudnikov').
+parent('EugeneBudnikov','IgorBudnikov').
+parent('NinaBudnikova','IgorBudnikov').
+parent('LydiaAfanasenkova','IrinaBudnikova').
+parent('AnatolyAfanasenkov','IrinaBudnikova').
+parent('LydiaAfanasenkova','TatyanaFilatova').
+parent('AnatolyAfanasenkov','TatyanaFilatova').
+parent('LydiaAfanasenkova','YuriAfanasenkov').
+parent('AnatolyAfanasenkov','YuriAfanasenkov').
+parent('VictorBudnikov','EugeneBudnikov').
+parent('PeterTrishkin','LydiaAfanasenkova').
+parent('DariaTrishkina','LydiaAfanasenkova').
+parent('PraskovyaAfanasenkova','AnatolyAfanasenkov').
+parent('AlexanderAfanasenkov','AnatolyAfanasenkov').
+parent('TatyanaFilatova','MariaKashmina').
+parent('AlexeyFilatov','MariaKashmina').
+parent('YuriAfanasenkov','SofiaAfanasenkova').
+parent('TatyanaAfanasenkova','SofiaAfanasenkova').
+parent('MariaKashmina','JaroslavKashmin').
+parent('DmitryKashmin','JaroslavKashmin').
+parent('MaximElenin','PraskovyaAfanasenkova').
+parent('MarusyaElenina','PraskovyaAfanasenkova').
+parent('MaximAfanasenkov','AlexanderAfanasenkov').
+parent('TanyaAfanasenkova','AlexanderAfanasenkov').
+parent('AndryanTrishkin','PeterTrishkin').
+parent('AlexanderTrishkin','AndryanTrishkin').
+parent('IgorBudnikov','ArtemBudnikov').
+parent('ElenaBudnikova','ArtemBudnikov').
+
+sister_in_law(X,Y) :- 
+	sex(X,f), 
+	sex(Y,f), 
+	parent(Y, Z), 
+	parent(M, Z), 
+	sex(M,m),
+	parent(L, M), 
+	parent(L, X), !.
+
+
